@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>HostelManagementSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>templates/Landing-page.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.IllegalArgumentException</exception-type>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>com.dollop.app.Exception.UnauthorizedAccessException</exception-type>
+    <location>/403.jsp</location>
+  </error-page>
+  <servlet>
+    <description></description>
+    <display-name>FeeSchedulerServlet</display-name>
+    <servlet-name>FeeSchedulerServlet</servlet-name>
+    <servlet-class>com.dollop.app.controller.FeeSchedulerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FeeSchedulerServlet</servlet-name>
+    <url-pattern>/FeeSchedulerServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
